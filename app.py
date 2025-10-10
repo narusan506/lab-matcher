@@ -40,6 +40,7 @@ def render_grades_input(csv_path="subjects1.csv"):
 
     # CSV読み込み
     df = pd.read_csv(csv_path)
+    st.write(df)
 
     # 成績データの保持
     if "grades" not in st.session_state:
