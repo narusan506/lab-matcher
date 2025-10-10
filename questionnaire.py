@@ -23,6 +23,7 @@ def render_questionnaire():
         ("研究内容について", "practical"),#↑ 安藤 亀井 喜田 米谷 高木 福森 八重樫 山田 ↓ 小川 香川 健二 正樹 
         ("夏休みの宿題は最後に追われてやる方ですか？", "plan"),#はい 亀井 香川 喜田 健二 正樹 高木 いいえ 安藤 福森 八重樫 山田 米谷
         ("二つのバイト先があります？どちらを選びますか？", "prof"),
+        ("教師に社会人経験があった方がいいと思いますか？","co"),
         ("実験Iではどんなものを作りましたか？", "experiment")
     ]
 
@@ -64,8 +65,11 @@ def render_questionnaire():
             ]
         elif key=="practical":
             options=["すぐに世の中に役立つ研究をしたい","理論について研究をしたい"]
+        elif key=="co":
+            options=["あったほうがいい","気にしない"]
         else:
             options = ["はい", "いいえ"]
+        
 
         # 過去の回答をデフォルトに
         default_answer = st.session_state.answers.get(key, options[0])

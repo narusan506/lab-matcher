@@ -104,13 +104,20 @@ def cal_professors(combined, answers):
         for p in ["小川","香川","健二","正樹"]:
             professors[p] += 1
 
-    if answers.get("practical")=="はい":
+    if answers.get("prof")=="老舗の喫茶店":
         for p in ["亀井","香川","喜田","健二","正樹","高木"]:
             professors[p] += 1
     else:
-        for p in ["安藤","福森","八重樫","山田","米谷"]:
-            professors[p] += 1
+        add=0
+        for p in ["安藤","八重樫","米谷","福森","山田"]:
+            professors[p] += 1+add
+            add+=0.1
+    if answers.get("co")=="あったほうがいい":
+        for p in ["小川","亀井","喜田","山田"]:
+            professors[p]+=1
 
+    
+    
     professors["安藤"] += (combined["E"] + combined["B"])/2
     professors["小川"] += (combined["A"] + combined["B"])/2
     professors["香川"] += (combined["A"] + combined["B"])/2
