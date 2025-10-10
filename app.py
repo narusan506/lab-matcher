@@ -97,7 +97,7 @@ def render_grades_input(csv_path="subjects1.csv"):
                         st.rerun()
 
                     remove_indices = []
-                    for i, elective_name in enumerate(st.session_state[elective_key]):
+                    for i, elective_name in reversed(list(enumerate(st.session_state[elective_key]))):
                         col1, col2, col3 = st.columns([2, 1, 0.3])
                         col1.write(elective_name)
                         grade = col2.selectbox(
@@ -122,3 +122,4 @@ def render_grades_input(csv_path="subjects1.csv"):
     # 次のページボタン
     if st.button("アンケートへ進む"):
         st.session_state["page"] = "questionnaire"
+        st.rerun()

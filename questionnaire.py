@@ -95,6 +95,7 @@ def render_questionnaire():
         with col2:
             if st.button("結果を見る"):
                 st.session_state["page"] = "result"
+                st.rerun()
 
     # 回答履歴をサイドバーに表示
     key_to_question = {key: text for text, key in questions}
