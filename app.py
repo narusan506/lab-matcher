@@ -46,7 +46,7 @@ def render_grades_input(csv_path="subjects1.csv"):
         st.session_state["grades"] = {}
 
     # ===== 表示ロジック =====
-    for main_category in ["共通", "専門"]:
+    for main_category in ["共通科目", "専門科目"]:
         with st.expander(f"{main_category}科目", expanded=True):
             # 各カテゴリ（能力・コース専門科目）ごとにグループ化
             subcategories = sorted(df[df["科目区分"] == main_category]["カテゴリ"].unique())

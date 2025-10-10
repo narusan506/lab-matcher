@@ -18,7 +18,7 @@ page = st.session_state["page"]
 
 if page == "app":
     # 科目入力ページ
-    app.render_grades_input("subjects.csv")
+    app.render_grades_input("subjects1.csv")
 
 elif page == "questionnaire":
     # アンケートページ
